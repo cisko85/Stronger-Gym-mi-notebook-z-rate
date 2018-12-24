@@ -56,7 +56,7 @@
 		</nav><!-- #site-navigation -->
 
 		</div><!--row-->
-	</header><!-- #masthead -->
+	</header><!-- #masthead container-fluid-->
 
 	<div id="content" class="site-content container">
-		
+		<div class="row">

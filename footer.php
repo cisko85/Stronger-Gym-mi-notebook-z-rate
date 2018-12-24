@@ -10,7 +10,7 @@
  */
 
 ?>
-
+		</div><!--row-->
 	</div><!-- #content y container -->
 
 	<footer id="colophon" class="site-footer">
