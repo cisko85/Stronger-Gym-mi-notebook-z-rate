@@ -120,7 +120,7 @@ add_action( 'widgets_init', 'strongergym_widgets_init' );
  * Enqueue scripts and styles.
  */
 function strongergym_scripts() {
-	wp_enqueue_style( 'bootsrap4_estilos', get_stylesheet_uri() . 'css/bootstrap.min.css');
+	wp_enqueue_style( 'bootsrap4_estilos', get_template_directory_uri() . '/css/bootstrap.min.css');
 	wp_enqueue_style( 'strongergym-style', get_stylesheet_uri() );
 	
 	wp_enqueue_script( 'bootstrap4_scripts', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '20151215', true );

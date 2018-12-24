@@ -3,8 +3,8 @@ Pasos creación de tema.
 ## Descargar Bootstrap(opcional)
   copiar los archivos  minificados bootstrap.min.js y bootstrap.min.css a las carpetas que les corresponden dentro del tema de js y crear una css(recomendado).
   Luego encolar los archivos de estilos y  escript dentro del archivo funtion.php nombredelaweb_script(){
-      wp_enqueue_style( 'bootsrap4_estilos', get_stylesheet_uri(). 'css/bootstrap.min.css');
-      wp_enqueue_script
+      wp_enqueue_style( 'bootsrap4_estilos', get_template_directory_uri(). '/css/bootstrap.min.css');
+      	wp_enqueue_script( 'bootstrap4_scripts', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '20151215', true );
   }
 ## Descargar contenido de prueba 
 de la siguiente página https://codex.wordpress.org/Theme_Unit_Test
