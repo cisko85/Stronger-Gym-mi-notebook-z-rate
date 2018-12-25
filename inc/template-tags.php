@@ -127,17 +127,19 @@ if ( ! function_exists( 'strongergym_post_thumbnail' ) ) :
 			?>
 
 			<div class="post-thumbnail">
-				<?php the_post_thumbnail(); ?>
+				<?php the_post_thumbnail('blog-single', array( 'class'=>'rounded')); //acá puse el tamaño que configure en funtions.php-->add_image_size( 'blog-single', 750, 500 , true); y le agrege la clase bootstrap rounded.
+		?> 
 			</div><!-- .post-thumbnail -->
 
 		<?php else : ?>
 
 		<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 			<?php
-			the_post_thumbnail( 'post-thumbnail', array(
+			the_post_thumbnail( 'medium_size_w: The medium size width', array(//acá puse el tamaño que quiero que sea el post-thumbail"miniatura o imagen destacada que setie en el archivo tamplate-tags.php
 				'alt' => the_title_attribute( array(
 					'echo' => false,
 				) ),
+				'class' => 'rounded'//agregar clase  css rounded de bootstrap para redondear imagen
 			) );
 			?>
 		</a>

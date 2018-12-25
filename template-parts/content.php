@@ -10,6 +10,10 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+
+	<?php strongergym_post_thumbnail(); ?>
+
 	<header class="entry-header">
 		<?php
 		if ( is_singular() ) :
@@ -29,10 +33,9 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php strongergym_post_thumbnail(); ?>
-
 	<div class="entry-content">
 		<?php
+		
 		the_content( sprintf(
 			wp_kses(
 				/* translators: %s: Name of current post. Only visible to screen readers */

@@ -41,7 +41,11 @@ if ( ! function_exists( 'strongergym_setup' ) ) :
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
-
+       // add_image_size( 'blog-index', 800, 400 , array('center', 'top') ); //acá agrego tamaño personalizado para imagen destacada de los posts. le agrego tru para determinar esa medida y no una proporcional(cropped recortada).
+		add_image_size( 'blog-single', 750, 500 ,  array( 'center', 'top' ));
+		
+		
+		
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'strongergym' ),
@@ -120,6 +124,8 @@ add_action( 'widgets_init', 'strongergym_widgets_init' );
  * Enqueue scripts and styles.
  */
 function strongergym_scripts() {
+	wp_enqueue_style('monserrat-font', 'https://fonts.googleapis.com/css?family=Montserrat:400,800', array(), 'all');
+	wp_enqueue_style( 'https://fonts.googleapis.com/css?family=Lato:400,900', false );//<link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet"> 
 	wp_enqueue_style( 'bootsrap4_estilos', get_template_directory_uri() . '/css/bootstrap.min.css');
 	wp_enqueue_style( 'strongergym-style', get_stylesheet_uri() );
 	
