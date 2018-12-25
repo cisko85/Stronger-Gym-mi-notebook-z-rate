@@ -637,6 +637,18 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
+/* menu mis estilos */
+.site-header{
+	background-color: #232323;
+}
+	
+.site-branding a{
+	text-decoration: none;
+	color: #ffd200;
+	text-transform: uppercase;
+}
+/* fin menu mis estilos */
+
 .main-navigation {
 	clear: both;
 	display: block;
@@ -687,6 +699,11 @@ a:hover, a:active {
 .main-navigation a {
 	display: block;
 	text-decoration: none;
+	color: #fff;
+	text-transform: uppercase;
+	padding: 0 .3em; /*con esto se me fue un boton del menú para abajo ver de corregir*/
+	line-height: 75px;
+    height: 100px;
 }
 
 /* Small menu. */

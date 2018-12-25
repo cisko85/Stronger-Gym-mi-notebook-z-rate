@@ -27,22 +27,30 @@
 	<header id="masthead" class="site-header container-fluid">
 		<div class="row">
 		<div class="site-branding col-md-4">
+			<!-- El siguiente código php es para no mostrar el título (lo que está en el if) si se muestra el logo. Por defecto en el tema podrías
+			elegir ambos o uno pero para que no se desarme mi head saco esa opción -->
 			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$strongergym_description = get_bloginfo( 'description', 'display' );
-			if ( $strongergym_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $strongergym_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
+			if (has_custom_logo()) {
+				the_custom_logo();
+				
+			} else {
+				if ( is_front_page() && is_home() ) :
+					?>
+					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<?php
+				else :
+					?>
+					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+					<?php
+				endif;
+				$strongergym_description = get_bloginfo( 'description', 'display' );
+				if ( $strongergym_description || is_customize_preview() ) :
+					?>
+					<p class="site-description"><?php echo $strongergym_description; /* WPCS: xss ok. */ ?></p>
+				<?php endif;
+			}
+			
+			 ?>
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation col-md-8">

@@ -17,3 +17,9 @@ Ir al archivo config.php dentro a define('WP_DEBUG', false); y cambiar false por
 - Show Current Template -CTI  (muestra la plantilla php correspondiente a cada cosa que se muestra en el front end).
 - Debeloper o Desarrollador de Automatic (muestra que cosas se necesitan para desarrollar)--> tildar desarrollar tema--> instalar barra para debug y theme check(se pueden instalar más cosas). Luego activar
 
+## Maquetar estructura.
+
+## Maquetar estilos.
+- si muestra logo entonces no mostrar título en el menú.
+- limitar el tamaño de la imagen del logo.
+
