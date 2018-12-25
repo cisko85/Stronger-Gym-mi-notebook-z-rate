@@ -21,5 +21,11 @@ Ir al archivo config.php dentro a define('WP_DEBUG', false); y cambiar false por
 
 ## Maquetar estilos.
 - si muestra logo entonces no mostrar título en el menú.
-- limitar el tamaño de la imagen del logo.
-
+- limitar el tamaño de la imagen del logo. En el archivo funtion.php ir a la siguiente función:
+add_theme_support( 'custom-logo', array(
+			'height'      => 250, los pixeles que quiera, 100px por ejemplo esto funciona a medias, el tamaño lo determine en style.css-->.custom-logo
+			'width'       => 250, los pixeles que quiera
+			'flex-width'  => true, se puede sacar esta opcion
+			'flex-height' => true, se puede sacar esta opcion
+		) );
+ LO anterior funciona a medias(solo lo recomienda y adapta un poco dentro de wordpress), el tamaño exacto lo determiné en style.css-->.custom-logo

@@ -26,7 +26,7 @@
 
 	<header id="masthead" class="site-header container-fluid">
 		<div class="row">
-		<div class="site-branding col-md-4">
+		<div class="site-branding col-md-3">
 			<!-- El siguiente código php es para no mostrar el título (lo que está en el if) si se muestra el logo. Por defecto en el tema podrías
 			elegir ambos o uno pero para que no se desarme mi head saco esa opción -->
 			<?php
@@ -53,7 +53,7 @@
 			 ?>
 		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation col-md-8">
+		<nav id="site-navigation" class="main-navigation col-md-9">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'strongergym' ); ?></button>
 			<?php
 			wp_nav_menu( array(

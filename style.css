@@ -640,6 +640,7 @@ a:hover, a:active {
 /* menu mis estilos */
 .site-header{
 	background-color: #232323;
+	
 }
 	
 .site-branding a{
@@ -647,6 +648,18 @@ a:hover, a:active {
 	color: #ffd200;
 	text-transform: uppercase;
 }
+.custom-logo{
+	height: 90px;
+	width: 250px;
+}
+
+ul.children{ /*sub-menu desplegable*/
+	background-color: #232323;
+	}
+a:hover, li:hover > a, .current_page_item >a, .ancenstor-menu_page_item >a{ /*.current page item para dejar hover amarillo en la página actual no me funciona*/
+	color: #ffd200;
+}
+
 /* fin menu mis estilos */
 
 .main-navigation {
@@ -654,6 +667,7 @@ a:hover, a:active {
 	display: block;
 	float: left;
 	width: 100%;
+	
 }
 
 .main-navigation ul {
@@ -703,7 +717,8 @@ a:hover, a:active {
 	text-transform: uppercase;
 	padding: 0 .3em; /*con esto se me fue un boton del menú para abajo ver de corregir*/
 	line-height: 75px;
-    height: 100px;
+	height: 100px;
+	font-size: 15px;
 }
 
 /* Small menu. */
@@ -928,6 +943,7 @@ object {
 /* Make sure logo link wraps around logo image. */
 .custom-logo-link {
 	display: inline-block;
+
 }
 
 /*--------------------------------------------------------------
