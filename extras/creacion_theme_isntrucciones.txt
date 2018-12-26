@@ -29,3 +29,10 @@ add_theme_support( 'custom-logo', array(
 			'flex-height' => true, se puede sacar esta opcion
 		) );
  LO anterior funciona a medias(solo lo recomienda y adapta un poco dentro de wordpress), el tamaño exacto lo determiné en style.css-->.custom-logo
+
+## Footer.
+	- Agregar zonas de widgets con <div id="footer-1" class="widget-area">
+						<?php dynamic_sidebar('footer-1')?>
+					</div>
+## Testear funcionamientos de widgets y maquetarlos.
+ - Instalar plugin monster widget para probar todos los widget disponibles.

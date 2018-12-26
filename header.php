@@ -53,7 +53,7 @@
 			 ?>
 		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation col-md-9">
+		<nav id="site-navigation " class="main-navigation col-md-9">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'strongergym' ); ?></button>
 			<?php
 			wp_nav_menu( array(

@@ -43,7 +43,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Galleries
 ## Mis estilos generales
 	#iconos
-
+	#Footer
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Normalize
@@ -620,15 +620,15 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: royalblue;
+	color: #232323;
 }
 
 a:visited {
-	color: purple;
+	color: grey;
 }
 
 a:hover, a:focus, a:active {
-	color: midnightblue;
+	color: #ffd200;;
 }
 
 a:focus {
@@ -636,8 +636,10 @@ a:focus {
 }
 
 a:hover, a:active {
-	outline: 0;
+	font-size: 105%;
+	
 }
+
 
 /*--------------------------------------------------------------
 ## Menus
@@ -655,17 +657,21 @@ a:hover, a:active {
 	text-transform: uppercase;
 	font-family: 'Montserrat', bold; 
 	font-weight: 800;
+	
 }
+
 .custom-logo{
 	height: 90px;
 	width: 250px;
 }
 
-ul.children{ /*sub-menu desplegable*/
-	background-color: #232323;
-	}
+/* .site-branding a{ /*sub-menu desplegable*/
+	/* background-color: #232323;
+	} */
 a:hover, li:hover > a, .current_page_item >a, .ancenstor-menu_page_item >a{ /*.current page item para dejar hover amarillo en la página actual no me funciona*/
 	color: #ffd200;
+
+	
 }
 
 /* fin menu mis estilos */
@@ -873,6 +879,68 @@ a:hover, li:hover > a, .current_page_item >a, .ancenstor-menu_page_item >a{ /*.c
 	max-width: 100%;
 }
 
+   /*--------------- side bar widget, mis estilos-------------------------- */
+   .widget .widget-title {
+	font-size: 1.8em;
+	margin-top: 1 em;
+	margin-bottom: 0.2em;
+	}
+	/* Esto es para subrayar los título pero no me gustó
+	.widget .widget-title::before{
+		content:"";
+		background-color: #ffd200;
+		height: 3px;
+		display: block;
+		position: relative;
+		top: 40px;
+		
+	} */
+	
+	.widget ul{ 
+	
+		margin-left: 1px;
+		padding-left:1px ;
+	}
+	.widget ul li{
+		list-style: none;
+	}
+	
+	  
+	.widget  ul li::before{ /* pseudo elementos fuente de font awesome*/
+			font-family: "Font Awesome 5 Free";
+			font-weight: 900;
+			content: "\f00c";
+		
+			color: #ffd200;
+			/* font-size: 0.3 em;  no me funciona */
+			margin-right: 0.5em;
+	
+			display: inline-block;
+			font-style: normal;
+			font-variant: normal;
+			text-rendering: auto;
+			-webkit-font-smoothing: antialiased;
+	}
+	
+		.widget ul li a{
+			color: #232323;
+			font-size: 0,9em;
+			text-decoration:  none;
+			
+		}
+.search-submit, input[type="submit"]{
+	color: #ffd200;
+	background-color: #232323;
+	border-color: #232323;
+	padding: 10 15 8 15px;
+}
+input[type="submit"]:hover{
+	color: #232323;
+	background-color: #ffd200;
+	border-color: #ffd200;
+	padding: 10 15 8 15px;
+}
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
@@ -933,55 +1001,7 @@ a.btn-leer-mas:hover{
 	}
 
 
-   /*--------------- side bar widget, mis estilos-------------------------- */
-.widget .widget-title {
-font-size: 1.8em;
-margin-top: 1 em;
-margin-bottom: 0.2em;
-}
-/* Esto es para subrayar los título pero no me gustó
-.widget .widget-title::before{
-	content:"";
-	background-color: #ffd200;
-	height: 3px;
-	display: block;
-	position: relative;
-	top: 40px;
-	
-} */
 
-.widget ul{ 
-
-	margin-left: 1px;
-	padding-left:1px ;
-}
-.widget ul li{
-	list-style: none;
-}
-
-  
-.widget  ul li::before{ /* pseudo elementos fuente de font awesome*/
-		font-family: "Font Awesome 5 Free";
-		font-weight: 900;
-		content: "\f00c";
-	
-		color: #ffd200;
-		/* font-size: 0.3 em;  no me funciona */
-		margin-right: 0.5em;
-
-		display: inline-block;
-		font-style: normal;
-		font-variant: normal;
-		text-rendering: auto;
-		-webkit-font-smoothing: antialiased;
-}
-
-	.widget ul li a{
-		color: #232323;
-		font-size: 0,9em;
-		text-decoration:  none;
-		
-	}
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
@@ -1134,4 +1154,22 @@ object {
 /* mis estilos extra generales */
 i{
 	margin-right: 1px;/*elijo utilizar css directo en lugar de la clase de bootstrap mr-1 así lo determino en general una sola vez*/
+}
+
+.site-footer{
+	background-color: #232323;
+	color: #fff;
+}
+.widgets-footer{
+	margin-top: 1.5em;
+}
+.site-footer .widget ul li a, .tagcloud a {
+	color:gray;
+	text-decoration: none;
+}
+
+.site-info a{
+	text-align: center;
+	color: #fff;
+	text-decoration: none;
 }
