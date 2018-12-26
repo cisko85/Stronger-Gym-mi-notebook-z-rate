@@ -30,7 +30,7 @@ if ( ! function_exists( 'strongergym_posted_on' ) ) :
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
-		echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
+		echo '<span class="posted-on"><i class="far fa-calendar-alt mr-1"> </i>' . $posted_on . '</span>'; // WPCS: XSS OK.
 
 	}
 endif;
@@ -43,7 +43,10 @@ if ( ! function_exists( 'strongergym_posted_by' ) ) :
 		$byline = sprintf(
 			/* translators: %s: post author. */
 			esc_html_x( 'by %s', 'post author', 'strongergym' ),
-			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+			'	<i class="fas fa-user"></i>
+			<span class="author vcard">
+		
+			<a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
 		echo '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
@@ -59,17 +62,17 @@ if ( ! function_exists( 'strongergym_entry_footer' ) ) :
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', 'strongergym' ) );
-			if ( $categories_list ) {
-				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'strongergym' ) . '</span>', $categories_list ); // WPCS: XSS OK.
-			}
+			// $categories_list = get_the_category_list( esc_html__( ', ', 'strongergym' ) );
+			// if ( $categories_list ) {
+			// 	/* translators: 1: list of categories. */
+			// 	printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'strongergym' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+			// }
 
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'strongergym' ) );
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'strongergym' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+				printf( '<i class="fas fa-tags mt-2"></i> <span class="tags-links">' . esc_html__( 'Tagged %1$s', 'strongergym' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 			}
 		}
 
@@ -133,6 +136,7 @@ if ( ! function_exists( 'strongergym_post_thumbnail' ) ) :
 
 		<?php else : ?>
 
+		<div class="container_img_index"><!--contenerdor para agregar texto dentro de la imagen-->
 		<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 			<?php
 			the_post_thumbnail( 'medium_size_w: The medium size width', array(//acá puse el tamaño que quiero que sea el post-thumbail"miniatura o imagen destacada que setie en el archivo tamplate-tags.php
@@ -143,6 +147,19 @@ if ( ! function_exists( 'strongergym_post_thumbnail' ) ) :
 			) );
 			?>
 		</a>
+		<div class="text-block-img ">
+		
+		<?php
+		
+		/* translators: used between list items, there is a space after the comma */
+			$categories_list = get_the_category_list( esc_html__( ', ', 'strongergym' ) );
+			if ( $categories_list ) {
+				/* translators: 1: list of categories. */
+				printf( '<span class="cat-links">' . esc_html__( ' %1$s', 'strongergym' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+			}
+        ?>
+		</div>
+		</div><!-- container-img-index -->
 
 		<?php
 		endif; // End is_singular().

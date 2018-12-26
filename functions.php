@@ -117,6 +117,8 @@ function strongergym_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+
+	
 }
 add_action( 'widgets_init', 'strongergym_widgets_init' );
 
@@ -126,6 +128,8 @@ add_action( 'widgets_init', 'strongergym_widgets_init' );
 function strongergym_scripts() {
 	wp_enqueue_style('monserrat-font', 'https://fonts.googleapis.com/css?family=Montserrat:400,800', array(), 'all');
 	wp_enqueue_style( 'https://fonts.googleapis.com/css?family=Lato:400,900', false );//<link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet"> 
+	wp_enqueue_style( 'iconos-fontawesome', 'https://use.fontawesome.com/releases/v5.6.3/css/all.css', false);
+	
 	wp_enqueue_style( 'bootsrap4_estilos', get_template_directory_uri() . '/css/bootstrap.min.css');
 	wp_enqueue_style( 'strongergym-style', get_stylesheet_uri() );
 	

@@ -41,6 +41,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Media
 	## Captions
 	## Galleries
+## Mis estilos generales
+	#iconos
+
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Normalize
@@ -114,6 +117,8 @@ pre {
 
 a {
 	background-color: transparent;
+	/* text-decoration: none; No se si no funciona porque edite por separado previamente otros a*/ 
+	
 }
 
 /**
@@ -641,6 +646,7 @@ a:hover, a:active {
 .site-header{
 	background-color: #232323;
 	
+	
 }
 	
 .site-branding a{
@@ -884,6 +890,98 @@ a:hover, li:hover > a, .current_page_item >a, .ancenstor-menu_page_item >a{ /*.c
 	color: #232323;
 	text-decoration: none;
 }
+a.btn-leer-mas{
+	color: #ffd200;
+	background-color: #232323;
+	border: 1px solid #232323;
+	text-decoration: none;
+	
+}
+a.btn-leer-mas:hover{
+	color:  #232323;
+	background-color: #ffd200;
+	border: 1px solid rgb(255, 210, 0);
+}
+
+.container_img_index{
+	position: relative;
+}
+.text-block-img{
+	position: absolute;
+	top:0;
+	left: 0;
+	background-color:rgb(255, 210, 0, .5);/*#ffd200 en rgba con transparencia*/
+	color: #fff;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-radius: 3px 0 3px 0;
+	
+}
+.text-block-img a{
+	color: #232323;
+	font-weight: bold;
+	text-decoration: none;
+} 
+
+.entry-meta .entry-footer, .entry-meta a, .entry-footer a{  /* Datos del post, autor, fecha, etiquetas , categorías */
+	color: #232323;
+	
+}
+	.entry-meta a, .entry-footer a {
+		font-weight: bold;
+		text-decoration: none;
+	}
+
+
+   /*--------------- side bar widget, mis estilos-------------------------- */
+.widget .widget-title {
+font-size: 1.8em;
+margin-top: 1 em;
+margin-bottom: 0.2em;
+}
+/* Esto es para subrayar los título pero no me gustó
+.widget .widget-title::before{
+	content:"";
+	background-color: #ffd200;
+	height: 3px;
+	display: block;
+	position: relative;
+	top: 40px;
+	
+} */
+
+.widget ul{ 
+
+	margin-left: 1px;
+	padding-left:1px ;
+}
+.widget ul li{
+	list-style: none;
+}
+
+  
+.widget  ul li::before{ /* pseudo elementos fuente de font awesome*/
+		font-family: "Font Awesome 5 Free";
+		font-weight: 900;
+		content: "\f00c";
+	
+		color: #ffd200;
+		/* font-size: 0.3 em;  no me funciona */
+		margin-right: 0.5em;
+
+		display: inline-block;
+		font-style: normal;
+		font-variant: normal;
+		text-rendering: auto;
+		-webkit-font-smoothing: antialiased;
+}
+
+	.widget ul li a{
+		color: #232323;
+		font-size: 0,9em;
+		text-decoration:  none;
+		
+	}
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
@@ -1032,4 +1130,8 @@ object {
 
 .gallery-caption {
 	display: block;
+}
+/* mis estilos extra generales */
+i{
+	margin-right: 1px;/*elijo utilizar css directo en lugar de la clase de bootstrap mr-1 así lo determino en general una sola vez*/
 }

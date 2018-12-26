@@ -35,20 +35,25 @@
 
 	<div class="entry-content">
 		<?php
-		
-		the_content( sprintf(
-			wp_kses(
-				/* translators: %s: Name of current post. Only visible to screen readers */
-				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'strongergym' ),
-				array(
-					'span' => array(
-						'class' => array(),
-					),
-				)
-			),
-			get_the_title()
-		) );
-
+		if (! is_singular()) :
+			the_excerpt();
+			echo '<a class="btn-leer-mas btn btn-primary float-left btn-sm  " href="'. get_permalink($post->ID).'">'. __('Read More','strongergym'). '</a>'; //codigo para agregar botón leer más.
+		else :
+			the_content( sprintf(
+				wp_kses(
+					/* translators: %s: Name of current post. Only visible to screen readers */
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'strongergym' ),
+					array(
+						'span' => array(
+							'class' => array(),
+						),
+					)
+				),
+				get_the_title()
+			) );
+			
+		endif;
+	
 		wp_link_pages( array(
 			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'strongergym' ),
 			'after'  => '</div>',
