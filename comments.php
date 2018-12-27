@@ -53,6 +53,8 @@ if ( post_password_required() ) {
 			wp_list_comments( array(
 				'style'      => 'ol',
 				'short_ping' => true,
+				//el próximo parámetro para el tamaño del avtar me lo traje desde otras opciones para agregar que figuran en el codex wordpress developer.
+				'avatar_size'=>64,
 			) );
 			?>
 		</ol><!-- .comment-list -->

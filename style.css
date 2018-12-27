@@ -117,6 +117,7 @@ pre {
 
 a {
 	background-color: transparent;
+	
 	/* text-decoration: none; No se si no funciona porque edite por separado previamente otros a*/ 
 	
 }
@@ -659,6 +660,23 @@ a:hover, a:active {
 	font-weight: 800;
 	
 }
+.site-title a:hover{
+	
+		font-size: 100%;
+		
+	
+} 
+
+.site-title a:active {
+	font-size: 100%;
+	text-shadow: 1px 1px 2px #ffd900;
+}
+.site-title a:focus{
+	font-size: 100%;
+	outline: none;
+
+}
+
 
 .custom-logo{
 	height: 90px;
@@ -689,6 +707,7 @@ a:hover, li:hover > a, .current_page_item >a, .ancenstor-menu_page_item >a{ /*.c
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
+	background-color: #232323;
 }
 
 .main-navigation ul ul {
@@ -712,6 +731,8 @@ a:hover, li:hover > a, .current_page_item >a, .ancenstor-menu_page_item >a{ /*.c
 
 .main-navigation ul ul a {
 	width: 200px;
+	line-height: 25px;
+	height: 50px;
 }
 
 .main-navigation ul li:hover > ul,
@@ -926,9 +947,9 @@ a:hover, li:hover > a, .current_page_item >a, .ancenstor-menu_page_item >a{ /*.c
 			color: #232323;
 			font-size: 0,9em;
 			text-decoration:  none;
-			
-		}
-.search-submit, input[type="submit"]{
+		}	
+    /* widget Search */
+.search-submit, input[type="submit"]{ 
 	color: #ffd200;
 	background-color: #232323;
 	border-color: #232323;
@@ -940,7 +961,13 @@ input[type="submit"]:hover{
 	border-color: #ffd200;
 	padding: 10 15 8 15px;
 }
-
+/* no me toma la diferenciacion de los estilos del search del footer del resto
+ .site-footer .search-submit, input[type="submit"]{ 
+	color: #ffd200;
+	background-color: #232323;
+	border-color: #ffd200;
+	padding: 10 15 8 15px;
+} */
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
@@ -1039,6 +1066,114 @@ a.btn-leer-mas:hover{
 .bypostauthor {
 	display: block;
 }
+
+.comment{ /*copie los mismos estilos del text area donde se escriben los comentarios*/
+	box-shadow: 2px 2px 3px ;
+	
+	border-bottom-color: rgb(204, 204, 204);
+border-bottom-left-radius: 3px;
+border-bottom-right-radius: 3px;
+border-bottom-style: solid;
+border-bottom-width: 0.916667px;
+border-image-outset: 0;
+border-image-repeat: stretch stretch;
+border-image-slice: 100%;
+border-image-source: none;
+border-image-width: 1;
+border-left-color: rgb(204, 204, 204);
+border-left-style: solid;
+border-left-width: 0.916667px;
+border-right-color: rgb(204, 204, 204);
+border-right-style: solid;
+border-right-width: 0.916667px;
+border-top-color: rgb(204, 204, 204);
+border-top-left-radius: 3px;
+border-top-right-radius: 3px;
+border-top-style: solid;
+border-top-width: 0.916667px;
+box-sizing: border-box;
+color: rgb(102, 102, 102);
+font-family: "Lato", sans-serif;
+font-size: 16px;
+font-weight: 400;
+line-height: 24px;
+margin-bottom: 10px;
+margin-left: 0px;/*probe con -85 para alinear pero no funcionó en todos lados*/
+margin-right: 0px;
+margin-top: 0px;
+overflow: auto;
+overflow-x: auto;
+overflow-y: auto;
+padding-bottom: 3px;
+padding-left: 3px;
+padding-right: 3px;
+padding-top: 3px;
+resize: vertical;
+text-align: start;
+width: 730px;
+}
+.comment a {
+	text-decoration: none;
+}
+.comment-author{
+	display: inline-block;
+}
+.comment-metadata{
+	display: inline-block;
+	margin-left: 160px;/*lo maquetee a ojo*/
+	
+}
+.comment-body{
+	padding: 10px;
+}
+
+.comment-content{
+	margin-top: 0.8em;
+}
+.comment-author a,.comment-metadata a{ /*otra vez no me toma la instrucción*/
+	color: #232323;
+}
+.reply a{
+	background: #232323;
+	
+	border-radius: 3px;
+	color: #ffd200;
+
+    padding: 5px 10px;
+	
+font-size: 12px;
+font-weight: normal;
+line-height: normal;
+text-align: center;
+
+}
+.reply a:hover {
+	color: #232323;
+	background-color: #ffd200; 
+}
+.replay a:active{
+	font-size: 100%;
+}
+/* esto era para bajar el nombre a la altura del avatar. Ahora está centrado respecto al eje y.553
+ fn .says{
+	position: absolute;
+	margin-top: 50px;
+} */
+/* cajitas de comentario del administrador destacadas en otro color sombras */
+.comment-list .comment.byuser,
+.comment-list .childern .comment.byuser{
+	border:1px solid #ffd200
+}
+.logged-in-as a{/*donde se escribe los comentarios, el a con el nombre del usuario*/
+text-decoration: none;
+}
+
+/* formulario de comentario */
+.comment-form textarea, .comment-form .form-control{
+	box-shadow: 2px 2px 3px ;
+	
+}
+
 
 /*--------------------------------------------------------------
 # Infinite scroll
@@ -1172,4 +1307,13 @@ i{
 	text-align: center;
 	color: #fff;
 	text-decoration: none;
+}
+
+/* dropdown desplegables */
+.postform {
+	border-radius: 3px;
+}
+
+#archives-dropdown--1{
+	border-radius:3px;
 }
