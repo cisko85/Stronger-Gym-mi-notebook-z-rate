@@ -30,20 +30,26 @@ get_header();
 
 				<div class="col-md-8 detalle_entrenador">
 					<header class="entry-header">
-					<?php
-				
-					the_title( '<h1 class="entry-title">', '</h1>' );
-				
-					?>
-				    </header>
-					<P> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio dolore voluptatem dolores ipsum libero culpa repudiandae tempora quae, eos nesciunt.
-					</P>
-					P> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio dolore voluptatem dolores ipsum libero culpa repudiandae tempora quae, eos nesciunt.
-					</P>
-					<h3 class="entry-title">Perfil del entrenador</h3>
-					<span>Nombre:</span> Fulano Fernandez <br/>
-					<span>Edad:</span> 30años<br/>
-					<span>Email:</span> <br/>
+					
+					<?php the_title( '<h1 class="entry-title">', '</h1>' );?>
+				    
+					</header>
+					<?php the_field('biografia');?>
+
+					<h3 class="entry-title"><?php the_field('perfil_del_entrenador');?></h3>
+					<span>Nombre:</span> <?php the_field('nombre_y_apellido');?> <br/>
+					<span>Edad:</span>
+					<?php 
+					// get raw date
+					 $date = get_field('edad', false, false);
+					// make date object
+					 $date = new DateTime($date);
+					// para mostrarlo en pantalla.
+					echo $date->format('j m Y'); 
+					
+					 ?>
+					<br/>
+					<span>Email:</span><?php the_field('email');?> <br/>
 					<span>Especialidades:</span> <br/>
 					<span></span> <br/>
 				</div>

@@ -44,3 +44,12 @@ add_theme_support( 'custom-logo', array(
 	-recargar el tema e ir al plugin loco translate. Ahora aparecerá la opcion create template y le damos a crear template. Luego agregar lenguaje.
 	- Traducir manualmente los detalles que marca el pluguin.
 	- Luego ir a Ajustes(o setings) y cambiar de inglés a español(esto si se trabajo desde el principio con underscores en inlgés)
+
+## Registrar un campo personalizado que aparecerá en el menúd del dashboard. Lo haré utilizando el código suguerido en la web a continuación en el archivo functions.php.
+ https://generatewp.com/
+ Register Custom Post Type  https://generatewp.com/post-type/
+
+## Luego para personalizar el campo. Darle como una plantilla preestablesida donde el cliente pueda editar.
+Instalo el pluguin advancedcustomfield en wordpress y luego  visito la página para copiar el código con el cual agregaré los campos
+personalizadados en la singlepage.php por ejemplo agregando <?php the-field('biografia');?>
+https://www.advancedcustomfields.com/
