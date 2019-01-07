@@ -19,6 +19,11 @@ get_header();
 			<div class="row">
 				<div class="col-md-4">
 					<img src="" alt="<?php echo get_template_directory_uri().'/img/silueta_entrenador.jpg'?>">
+
+					<i class="fab fa-facebook-square fa-2x"></i>
+					<i class="fab fa-twiter-square fa-2x"></i>
+					<i class="fab fa-instagram fa-2x"></i>
+					<i class="fab fa-youtube-square fa-2x"></i>
 				
 				</div>
 			
@@ -44,8 +49,27 @@ get_header();
 				</div>
 
 			</div>
-
+			
+			<div class="row">
 		
+				<div class="col-md-12">
+				<h3 class="entry-title">Habilidades</h3>
+					<div class="progress">
+					
+							<p>Boxeo</p>
+							<div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">85%</div>
+					</div>
+					<div class="progress">
+							<p>Pesas</p>
+							<div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+					</div>
+					<div class="progress">
+							<div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+					</div>
+				</div>
+			
+			</div>
+			
 	    </article>
 
 		</main><!-- #main -->
