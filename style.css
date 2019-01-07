@@ -44,6 +44,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 ## Mis estilos generales
 	#iconos
 	#Footer
+
+# Custom post type.
+
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Normalize
@@ -659,6 +662,12 @@ a:hover, a:active {
 	font-family: 'Montserrat', bold; 
 	font-weight: 800;
 	
+	
+}
+.site-title {
+font-size: 180%;
+text-align: center;
+
 }
 .site-title a:hover{
 	
@@ -1316,4 +1325,15 @@ i{
 
 #archives-dropdown--1{
 	border-radius:3px;
+}
+
+/* Custom post types estilos */
+
+.entrenador h1{
+	margin-top:0px;
+	text-transform: capitalize;
+}
+.detalle_entrenador span{
+	font-weight: bold;
+	color: #232323;
 }

@@ -36,3 +36,11 @@ add_theme_support( 'custom-logo', array(
 					</div>
 ## Testear funcionamientos de widgets y maquetarlos.
  - Instalar plugin monster widget para probar todos los widget disponibles.
+ - podría maquetar formularios(como videoclase 40 aprox)
+## Chequear el tema con el plugin theme check que lo encontraremos en el escritorio del administrador, apariencia->theme check.
+## Traducción del tema.
+	-instalar y activar el plugin loco translate.
+	-borrar el archivo wp-content/themes/nombredeltema/languages/nombredeltema.pot   porque en ese archivo se fue agregando cosas y loco translate no traduciría todo.
+	-recargar el tema e ir al plugin loco translate. Ahora aparecerá la opcion create template y le damos a crear template. Luego agregar lenguaje.
+	- Traducir manualmente los detalles que marca el pluguin.
+	- Luego ir a Ajustes(o setings) y cambiar de inglés a español(esto si se trabajo desde el principio con underscores en inlgés)

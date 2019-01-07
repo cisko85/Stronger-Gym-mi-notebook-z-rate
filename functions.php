@@ -121,7 +121,7 @@ function strongergym_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer 1', 'strongergym' ),
 		'id'            => 'footer-1',
-		'description'   => esc_html__( 'Zona 1 para agregar widgets en el pie de página.', 'strongergym' ),
+		'description'   => esc_html__( 'Zona 1 para agregar widgets en el pie de p&aacutegina.', 'strongergym' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -199,3 +199,75 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/*   Trabajando con tipo de Post personalizado post type      */
+// En esta dirección se encuentra la manera sugerida por el codex https://codex.wordpress.org/Post_Types  en esta ocación utilicé otra basada en  https://generatewp.com/
+/*function create_post_type() {
+	register_post_type( 'acme_product',
+	  array(
+		'labels' => array(
+		  'name' => __( 'Productos' ),
+		  'singular_name' => __( 'Producto' )
+		),
+		'public' => true,
+		'has_archive' => true,
+	  )
+	);
+  }
+  add_action( 'init', 'create_post_type' );
+*/
+// https://generatewp.com/
+// Register Custom Post Type
+function custom_post_type() {
+
+	$labels = array(
+		'name'                  => _x( 'Entrenador', 'Post Type General Name', 'text_domain' ),
+		'singular_name'         => _x( 'Entrenador', 'Post Type Singular Name', 'text_domain' ),
+		'menu_name'             => __( 'Entrenadores', 'text_domain' ),
+		'name_admin_bar'        => __( 'Entrenador', 'text_domain' ),
+		'archives'              => __( 'Item Archives', 'text_domain' ),
+		'attributes'            => __( 'Item Attributes', 'text_domain' ),
+		'parent_item_colon'     => __( 'Parent Item:', 'text_domain' ),
+		'all_items'             => __( 'Todos los entrenadores', 'text_domain' ),
+		'add_new_item'          => __( 'Agregar un nuevo entrenador', 'text_domain' ),
+		'add_new'               => __( 'Agregar nuevo', 'text_domain' ),
+		'new_item'              => __( 'New Item', 'text_domain' ),
+		'edit_item'             => __( 'Edit Item', 'text_domain' ),
+		'update_item'           => __( 'Update Item', 'text_domain' ),
+		'view_item'             => __( 'View Item', 'text_domain' ),
+		'view_items'            => __( 'View Items', 'text_domain' ),
+		'search_items'          => __( 'Search Item', 'text_domain' ),
+		'not_found'             => __( 'Not found', 'text_domain' ),
+		'not_found_in_trash'    => __( 'Not found in Trash', 'text_domain' ),
+		'featured_image'        => __( 'Featured Image', 'text_domain' ),
+		'set_featured_image'    => __( 'Set featured image', 'text_domain' ),
+		'remove_featured_image' => __( 'Remove featured image', 'text_domain' ),
+		'use_featured_image'    => __( 'Use as featured image', 'text_domain' ),
+		'insert_into_item'      => __( 'Insert into item', 'text_domain' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this item', 'text_domain' ),
+		'items_list'            => __( 'Items list', 'text_domain' ),
+		'items_list_navigation' => __( 'Items list navigation', 'text_domain' ),
+		'filter_items_list'     => __( 'Filter items list', 'text_domain' ),
+	);
+	$args = array(
+		'label'                 => __( 'Post Type', 'text_domain' ),
+		'description'           => __( 'Post Type Description', 'text_domain' ),
+		'labels'                => $labels,
+		'supports'              => array('title', 'editor', 'slug','thumbnail'),
+		//'taxonomies'            => array( 'category', 'post_tag' ),
+		'hierarchical'          => false,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 5,
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => true,
+		'can_export'            => true,
+		'has_archive'           => true,
+		'exclude_from_search'   => false,
+		'publicly_queryable'    => true,
+		'capability_type'       => 'page',
+	);
+	register_post_type( 'entrenador', $args );
+
+}
+add_action( 'init', 'custom_post_type', 0 );
