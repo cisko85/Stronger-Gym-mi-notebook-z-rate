@@ -43,8 +43,8 @@ if ( ! function_exists( 'strongergym_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
        // add_image_size( 'blog-index', 800, 400 , array('center', 'top') ); //acá agrego tamaño personalizado para imagen destacada de los posts. le agrego tru para determinar esa medida y no una proporcional(cropped recortada).
 		add_image_size( 'blog-single', 750, 500 ,  array( 'center', 'top' ));
-		
-		
+		add_image_size( 'entrenador-galery', 400, 300 ,  array( 'left', 'top' ));
+		add_image_size( 'entrenador-perfil', 400, 600 ,  array( 'center', 'top' ));	
 		
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(

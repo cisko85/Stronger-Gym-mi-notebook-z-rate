@@ -636,7 +636,8 @@ a:hover, a:focus, a:active {
 }
 
 a:focus {
-	outline: thin dotted;
+	outline: none;
+	
 }
 
 a:hover, a:active {
@@ -701,6 +702,7 @@ a:hover, li:hover > a, .current_page_item >a, .ancenstor-menu_page_item >a{ /*.c
 	
 }
 
+
 /* fin menu mis estilos */
 
 .main-navigation {
@@ -757,7 +759,7 @@ a:hover, li:hover > a, .current_page_item >a, .ancenstor-menu_page_item >a{ /*.c
 .main-navigation a {
 	display: block;
 	text-decoration: none;
-	color: #fff;
+	color:#fff;
 	text-transform: uppercase;
 	padding: 0 .3em; /*con esto se me fue un boton del menú para abajo ver de corregir*/
 	line-height: 75px;
@@ -765,6 +767,22 @@ a:hover, li:hover > a, .current_page_item >a, .ancenstor-menu_page_item >a{ /*.c
 	font-size: 15px;
 }
 
+/* prueba de efecto linea cargando sobre el a */
+
+.main-navigation ul li a::before{
+content: "";
+display: block;
+height: 4px;
+background: #ffd200;
+width: 0px;
+transition: all ease-in 250ms;
+
+}
+
+.main-navigation ul li a:hover::before{
+	width: 100%;
+	
+}
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
@@ -1336,4 +1354,8 @@ i{
 .detalle_entrenador span{
 	font-weight: bold;
 	color: #232323;
+}
+.contenedor_galery{
+	position: relative;
+	padding-right: 0.5px;
 }
