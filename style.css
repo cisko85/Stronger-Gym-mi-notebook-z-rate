@@ -1359,3 +1359,7 @@ i{
 	position: relative;
 	padding-right: 0.5px;
 }
+.enlaces_sociales a{
+	margin-right: 0.25em;
+	color: #232323;
+}

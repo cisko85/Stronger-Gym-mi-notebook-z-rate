@@ -22,24 +22,26 @@ get_header();
 				
 					<?php
 					the_post_thumbnail('entrenador-perfil',['class'=>'rounded'])
-					?>			
-					
+					?>		
+
+					<div class="enlaces_sociales">
 					<?php if (get_field('facebook')){?>
-					   <a href="<?php the_field('facebook');?>"><i class="fab fa-facebook-square fa-2x"></i> </a>
+					   <a href="<?php the_field('facebook');?>" target="_blank"><i class="fab fa-facebook-square fa-2x"></i> </a>
 					<?php } ?>
 
 					<?php if (get_field('twiter')){?>
-					<a href="<?php the_field('twiter');?>"><i class="fab fa-twiter-square fa-2x"></i> </a>
+					<a href="<?php the_field('twiter');?>" target="_blank"><i class="fab fa-twitter-square fa-2x"></i> </a>
 					<?php } ?>
 
 
 					<?php if (get_field('instagram')){?>
-					<a href="<?php the_field('instagram');?>"><i class="fab fa-instagram fa-2x"></i> </a>
+					<a href="<?php the_field('instagram');?>" target="_blank"><i class="fab fa-instagram fa-2x"></i> </a>
 					<?php } ?>
 
 					<?php if (get_field('youtube')){?>
-					<a href="<?php the_field('youtube');?>"><i class="fab fa-youtube-square fa-2x"></i> </a>
+					<a href="<?php the_field('youtube');?>" target="_blank"><i class="fab fa-youtube-square fa-2x"></i> </a>
 					<?php } ?>
+					</div><!--enlaces sociales-->
 				</div>
                 <?php }?>
 			
@@ -69,8 +71,21 @@ get_header();
 					<span>Email:</span><?php the_field('email');?> 
 					<?php } ?>
 					<br/>
-					<span>Especialidades:</span> <br/>
-					<span></span> <br/>
+					
+					<span>Especialidades:</span>
+						<?php
+						$terms=get_terms('especialidad');//especialidad es una taxonomía
+						if(!empty($terms) && ! is_wp_error($terms)){
+							
+							foreach ($terms as $term) {
+								echo $term->name. ', ';
+							
+							}
+							
+						}
+						?>
+					<br/>
+					 
 				</div>
 
 			</div>
@@ -80,20 +95,20 @@ get_header();
 				<div class="col-md-12">
 					<h3 class="entry-title">Habilidades</h3>
 				    <h5>Enseñanza</h5>
-					<div class="progress">
+					<div class="progress" >
 				
-							<div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">85%</div>
+							<div class="progress-bar" role="progressbar" style="width: 85%; background-color: #ffd200;color:#232323;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">85%</div>
 					</div> <br>
 
 					<h5>Pesas</h5>
 					<div class="progress">
 							
-							<div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+							<div class="progress-bar" role="progressbar" style="width: 75% ; background-color: #ffd200 ;color:#232323;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
 					</div> <br>
 
 					<h5>Boxeo</h5>
 					<div class="progress">
-							<div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+							<div class="progress-bar" role="progressbar" style="width: 75% ; background-color:#ffd200;color:#232323;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
 					</div>
 				</div>
 			
